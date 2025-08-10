@@ -22,7 +22,7 @@ import com.sepomex.vo.MunicipioVO;
  * <p>La clase está anotada con {@link RestController}, lo que permite exponer métodos
  * RESTful directamente, con los resultados serializados automáticamente como JSON.</p>
  *
- * @author TuNombre
+ * @author Rigoberto Mercado
  * @version 1.0
  */
 @RestController

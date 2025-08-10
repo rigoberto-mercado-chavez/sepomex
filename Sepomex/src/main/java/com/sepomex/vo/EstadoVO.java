@@ -15,6 +15,7 @@ import java.util.List;
  * 
  * @see MunicipioVO
  * 
+ * @author Rigoberto Mercado
  * @version 1.0
  */
 public class EstadoVO implements Serializable {

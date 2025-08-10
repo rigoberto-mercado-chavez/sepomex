@@ -47,7 +47,6 @@
 		<dependency>
 			<groupId>com.h2database</groupId>
 			<artifactId>h2</artifactId>
-			<scope>runtime</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -57,24 +56,33 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
-			<scope>test</scope>
 		</dependency>
 		
 		<dependency>
 			<groupId>jakarta.servlet</groupId>
 			<artifactId>jakarta.servlet-api</artifactId>
-			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>jakarta.servlet.jsp</groupId>
 			<artifactId>jakarta.servlet.jsp-api</artifactId>
 			<version>3.0.0</version>
-			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>wsdl4j</groupId>
+			<artifactId>wsdl4j</artifactId>
 		</dependency>
 <!--		<dependency>-->
 <!--            <groupId>jakarta.servlet.jsp.jstl</groupId>-->
 <!--            <artifactId>jakarta.servlet.jsp.jstl-api</artifactId>-->
 <!--            <scope>runtime</scope>-->
+<!--        </dependency>-->
+<!--		<dependency>-->
+<!--        	<groupId>org.slf4j</groupId>-->
+<!--        	<artifactId>slf4j-api</artifactId>-->
+<!--		</dependency>-->
+<!--		<dependency>-->
+<!--            <groupId>org.slf4j</groupId>-->
+<!--            <artifactId>slf4j-simple</artifactId>-->
 <!--        </dependency>-->
 	</dependencies>
 
@@ -83,6 +91,24 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>jaxb2-maven-plugin</artifactId>
+				<version>3.1.0</version>
+				<executions>
+					<execution>
+						<id>xjc</id>
+						<goals>
+							<goal>xjc</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<sources>
+						<source>${project.basedir}/src/main/resources/soap/sepomex.xsd</source>
+					</sources>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>

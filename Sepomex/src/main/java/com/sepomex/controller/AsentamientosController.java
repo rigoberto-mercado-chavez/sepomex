@@ -44,9 +44,9 @@ public class AsentamientosController {
      * @param idAsentamiento ID específico del asentamiento a buscar
      * @return una lista de objetos {@link AsentamientoVO} que representan los asentamientos encontrados
      */
-	@RequestMapping(path="/asentamientos/{idEstado}/{idAsentamiento}", produces="application/json")
-	public List<AsentamientoVO> getAsentamientos(@PathVariable("idEstado") int idEstado, @PathVariable("idAsentamiento") int idAsentamiento) {
-		return asentamientosService.getAsentamientos(idEstado, idAsentamiento);
+	@RequestMapping(path="/asentamientos/{idEstado}/{idMunicipio}", produces="application/json")
+	public List<AsentamientoVO> getAsentamientos(@PathVariable("idEstado") int idEstado, @PathVariable("idMunicipio") int idMunicipio) {
+		return asentamientosService.getAsentamientos(idEstado, idMunicipio);
 	}
 	
 }

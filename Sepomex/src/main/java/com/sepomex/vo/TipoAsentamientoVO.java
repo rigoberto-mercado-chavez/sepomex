@@ -11,6 +11,7 @@ import java.io.Serializable;
  * <p>Esta clase implementa {@link Serializable}, lo cual permite su uso en operaciones
  * donde se requiere la serialización de objetos, como la transmisión de datos o almacenamiento en caché.</p>
  * 
+ * @author Rigoberto Mercado
  * @version 1.0
  */
 public class TipoAsentamientoVO implements Serializable {

@@ -19,6 +19,9 @@ import com.sepomex.vo.TipoAsentamientoVO;
  * filtrados por estado y municipio, devolviendo objetos de tipo {@link AsentamientoVO}.
  * 
  * Utiliza el repositorio {@link AsentamientosRepository} para acceder a los datos.
+ * 
+ * @author Rigoberto Mercado
+ * @version 1.0
  */
 @Service
 public class AsentamientosServiceImpl implements AsentamientosService {

@@ -1,0 +1,104 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+           xmlns:tns="http://spring.io/guides/gs-producing-web-service"
+           targetNamespace="http://spring.io/guides/gs-producing-web-service" elementFormDefault="qualified">
+    <xs:element name="getEstadosRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="idEstado" type="xs:int"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getEstadosResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="estados" minOccurs="0" maxOccurs="unbounded" type="tns:estadoVO"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="getMunicipiosRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="idEstado" type="xs:int"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getMunicipiosResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="municipios" minOccurs="0" maxOccurs="unbounded" type="tns:municipioVO"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="getAsentamientosRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="idEstado" type="xs:int"/>
+                <xs:element name="idMunicipio" type="xs:int"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getAsentamientosResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="asentamientos" minOccurs="0" maxOccurs="unbounded" type="tns:asentamientoVO"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+        <xs:element name="getCodigoPostalRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="codigoPostal" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getCodigoPostalResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="asentamientos" minOccurs="0" maxOccurs="unbounded" type="tns:asentamientoVO"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:complexType name="estadoVO">
+        <xs:sequence>
+            <xs:element name="idEstado" type="xs:int"/>
+            <xs:element name="claveEstado" type="xs:string"/>
+            <xs:element name="estado" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="municipioVO">
+        <xs:sequence>
+            <xs:element name="idMunicipio" type="xs:int"/>
+            <xs:element name="claveMunicipio" type="xs:string"/>
+            <xs:element name="municipio" type="xs:string"/>
+            <xs:element name="estadoVO" type="tns:estadoVO"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="asentamientoVO">
+        <xs:sequence>
+            <xs:element name="idAsentamiento" type="xs:int"/>
+            <xs:element name="asentamiento" type="xs:string"/>
+            <xs:element name="ciudad" type="xs:string"/>
+            <xs:element name="codigoPostal" type="xs:string"/>
+            <xs:element name="municipioVO" type="tns:municipioVO"/>
+            <xs:element name="tipoAsentamientoVO" type="tns:tipoAsentamientoVO"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="tipoAsentamientoVO">
+        <xs:sequence>
+            <xs:element name="idTipoAsentamiento" type="xs:int"/>
+            <xs:element name="claveTipoAsentamiento" type="xs:string"/>
+            <xs:element name="tipoAsentamiento" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

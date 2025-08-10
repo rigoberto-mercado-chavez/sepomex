@@ -13,6 +13,7 @@ import java.io.Serializable;
  * 
  * @see EstadoVO
  * 
+ * @author Rigoberto Mercado
  * @version 1.0
  */
 public class MunicipioVO implements Serializable {

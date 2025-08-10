@@ -14,6 +14,7 @@ import java.io.Serializable;
  * @see MunicipioVO
  * @see TipoAsentamientoVO
  * 
+ * @author Rigoberto Mercado
  * @version 1.0
  */
 public class AsentamientoVO implements Serializable {
